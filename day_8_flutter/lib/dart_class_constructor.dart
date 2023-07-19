@@ -1,3 +1,5 @@
+import 'package:day_8_flutter/dart_named_construgtor.dart';
+
 class Body {
   int numberOfBody = 0;
   Body({required int numberOfBody}) {
@@ -60,6 +62,14 @@ class Building {
 
 class Wheel {
   int numberOfWheel =0;
+Wheel ({required int numberOfWheel}) {
+  this.numberOfWheel=numberOfWheel;
+
+}
+void infoShow() {
+  print(numberOfWheel);
+}
+
 
 }
 
@@ -73,5 +83,7 @@ void main() {
   final Door ajnaiDoor =Door(numberOfDoors: 1);
   final Building ajnai101= Building(floor: ajnaiFloor, door: ajnaiDoor);
   ajnai101.nameBuilding();
+  final Wheel wheel= Wheel(numberOfWheel:6);
+  wheel.infoShow();
 
 }
