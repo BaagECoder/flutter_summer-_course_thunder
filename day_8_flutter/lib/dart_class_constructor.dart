@@ -60,7 +60,7 @@ class Building {
 
 class Wheel {
   int numberOfWheel =0;
-  
+
 }
 
 // Test //
