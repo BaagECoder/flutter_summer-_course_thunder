@@ -47,30 +47,25 @@ class Building {
   Floor floor = Floor(numberOfFloors: 0);
   Door door = Door(numberOfDoors: 0);
 
-  Building ({required Floor floor, required Door door }) {
-    this.floor=floor;
-    this.door=door;
-
+  Building({required Floor floor, required Door door}) {
+    this.floor = floor;
+    this.door = door;
   }
-  void nameBuilding () {
+  void nameBuilding() {
     print("Ajnai101");
   }
 }
 
-
 // ex2 //
 
 class Wheel {
-  int numberOfWheel =0;
-Wheel ({required int numberOfWheel}) {
-  this.numberOfWheel=numberOfWheel;
-
-}
-void infoShow() {
-  print(numberOfWheel);
-}
-
-
+  int numberOfWheel = 0;
+  Wheel({required int numberOfWheel}) {
+    this.numberOfWheel = numberOfWheel;
+  }
+  void infoShow() {
+    print(numberOfWheel);
+  }
 }
 
 // Test //
@@ -79,11 +74,10 @@ void main() {
   final Head baagiiHead = Head(numberOfHead: 1);
   final Human baagii = Human(humanBody: baagiiBody, humanHead: baagiiHead);
   baagii.showInfo();
-  final Floor ajnaiFloor= Floor(numberOfFloors: 3);
-  final Door ajnaiDoor =Door(numberOfDoors: 1);
-  final Building ajnai101= Building(floor: ajnaiFloor, door: ajnaiDoor);
+  final Floor ajnaiFloor = Floor(numberOfFloors: 3);
+  final Door ajnaiDoor = Door(numberOfDoors: 1);
+  final Building ajnai101 = Building(floor: ajnaiFloor, door: ajnaiDoor);
   ajnai101.nameBuilding();
-  final Wheel wheel= Wheel(numberOfWheel:6);
+  final Wheel wheel = Wheel(numberOfWheel: 6);
   wheel.infoShow();
-
 }
