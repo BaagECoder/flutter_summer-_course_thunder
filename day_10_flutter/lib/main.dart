@@ -1,39 +1,52 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp());
-  final Text text = Text(
-    "Flutter Day 10",
-    style: TextStyle(
-      fontSize: 34,
-      color: Colors.deepOrangeAccent,
-      fontWeight: FontWeight.bold,
-    ),
-  );
+  final MySuperApp myApp = MySuperApp();
+  runApp(myApp);
+}
 
-  final Container container = Container(
-    child: Center(
-      child: text,
-    ),
-  );
+// Stateless Widget
+class MySuperApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        theme: ThemeData(fontFamily: "Ribeye"),
+        home: Scaffold(
+          appBar: AppBar(
+            title: Text("Hello Baagii"),
+          ),
+          body: Container(
+            child: Center(
+              child: Column(
 
-  final Scaffold myScaffold = Scaffold(
-    body: container,
-    appBar: AppBar(
-      title: Text("Hello Thunder"),
-    ),
-    floatingActionButton: FloatingActionButton(
-      onPressed: () {},
-      child: Icon(Icons.edit),
-    ),
-  );
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                  "Hello Body",
+                  style: TextStyle(color: Colors.greenAccent, fontSize: 34),
+                ),
+                  Text(
+                    "Hello Body",
+                    style: TextStyle(color: Colors.greenAccent, fontSize: 34),
+                  ),
+                  Text(
+                    "Hello Body",
+                    style: TextStyle(color: Colors.greenAccent, fontSize: 34),
+                  ),
+                ],
 
-  final MaterialApp app = MaterialApp(
-    theme: ThemeData(fontFamily: "Ribeye"),
-    home: myScaffold,
-  );
-  runApp(app);
+              ),
+            ),
+          ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: printMe ,
+            child: Image.asset("assets/images/Facebook.png", scale:2 ,
+           ),
 
-  // Stateless Widget
-
+          ),
+        ));
+  }
+}
+void printMe(){
+  print("Hello me");
 }
