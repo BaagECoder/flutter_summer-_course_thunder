@@ -40,7 +40,8 @@ class MySuperApp extends StatelessWidget {
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: printMe ,
-            child: Image.asset("assets/images/Facebook.png", scale:2 ,
+            child: Image.asset("assets/images/Facebook.png", fit: BoxFit.cover
+              ,
            ),
 
           ),
