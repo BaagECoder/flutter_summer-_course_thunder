@@ -26,6 +26,11 @@ class MyApp extends StatelessWidget {
               ),
               borderRadius: BorderRadius.circular(25),
 
+
+            ),
+            child: ElevatedButton(
+              onPressed: (){},
+              style: ElevatedButton.styleFrom(backgroundColor: ),
             ),
 
           ),
