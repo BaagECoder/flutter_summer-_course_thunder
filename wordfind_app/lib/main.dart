@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wordfind_app/task_page.dart';
 import 'package:wordfind_app/start_page.dart';
 import 'welcome_page.dart';
 import 'start_page.dart';
@@ -16,13 +17,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Word Find Game',
       theme: ThemeData(
-
         fontFamily: "Ribeye",
       ),
       debugShowCheckedModeBanner: false,
-      home:
-      WelcomePage(),
-
+      home: TaskPage(),
     );
   }
 }

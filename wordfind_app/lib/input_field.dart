@@ -7,7 +7,7 @@ class InputField extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 310,
-      height: 50,
+      height: 80,
       child: TextField(
         onSubmitted: (String value) {},
         maxLines: 1,

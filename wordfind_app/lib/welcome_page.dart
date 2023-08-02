@@ -9,7 +9,9 @@ class WelcomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFFBF5F2),
-      body: Container(
+      body: SafeArea(
+        child:
+       Container(
         decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage("assets/images/back1.png"), fit: BoxFit.cover),
@@ -47,6 +49,7 @@ class WelcomePage extends StatelessWidget {
             ),
           ],
         ),
+      ),
       ),
       floatingActionButton: Container(
         margin: EdgeInsets.only(bottom:20 ),
