@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:wordfind_app/gradient_text.dart';
 import 'package:wordfind_app/input_field.dart';
+import 'package:wordfind_app/task_page.dart';
 
-class StartPage extends StatelessWidget {
-  const StartPage({super.key});
+import 'models/user_model.dart';
 
+User newUser = User("Guest", 0);
+
+class StartPage extends StatefulWidget {
+  StartPage({super.key});
+
+  @override
+  State<StartPage> createState() => _StartPageState();
+}
+
+class _StartPageState extends State<StartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,17 +54,28 @@ class StartPage extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: StartButton(),
+      floatingActionButton: StartButton(newUser),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
+  }
+
+  void _createUser(String userName) {
+    setState(() {
+      userName;
+    });
   }
 }
 
 class StartButton extends StatelessWidget {
-  const StartButton({super.key});
+  final User newUser;
+  const StartButton(this.newUser, {super.key});
 
   @override
   Widget build(BuildContext context) {
+    if (newUser.userName == "Guest") {
+      return Container();
+    }
+
     return Container(
       width: 310,
       height: 60,
@@ -67,7 +88,10 @@ class StartButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(25),
       ),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => TaskPage(newUser)));
+        },
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.transparent,
           elevation: 0,
