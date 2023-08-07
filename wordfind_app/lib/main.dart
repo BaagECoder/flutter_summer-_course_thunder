@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Ribeye",
       ),
       debugShowCheckedModeBanner: false,
-      home: WelcomePage(),
+      home: StartPage(),
     );
   }
 }

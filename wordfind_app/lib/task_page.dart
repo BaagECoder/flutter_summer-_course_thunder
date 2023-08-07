@@ -13,13 +13,13 @@ class TaskPage extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: Image.asset("assets/images/arrow_back.png"),
-          onPressed: () {},
+          onPressed: () {Navigator.pop(context);},
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
         title: Text(
-          "Batbold",
+          user.userName,
           style: TextStyle(fontSize: 24, color: Color(0xFFE86B02)),
         ),
       ),
@@ -47,7 +47,9 @@ class TaskPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.transparent,
                             elevation: 0,

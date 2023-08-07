@@ -8,7 +8,7 @@ import 'models/user_model.dart';
 User newUser = User("Guest", 0);
 
 class StartPage extends StatefulWidget {
-  StartPage({super.key});
+  const StartPage({super.key});
 
   @override
   State<StartPage> createState() => _StartPageState();
@@ -34,23 +34,20 @@ class _StartPageState extends State<StartPage> {
           child: Image.asset("assets/images/game_logo.png"),
         ),
       ),
-      body: SafeArea(
-        child: Container(
-          decoration: BoxDecoration(
-            image:
-                DecorationImage(image: AssetImage("assets/images/back2.png")),
-          ),
-          child: Center(
-            child: Column(
-              children: [
-                Padding(padding: EdgeInsets.only(top: 50)),
-                Image.asset("assets/images/iCodeGuyHead.png"),
-                Padding(padding: EdgeInsets.only(top: 30)),
-                GradientText("Player Name", 20.0),
-                Padding(padding: EdgeInsets.only(top: 30)),
-                InputField(),
-              ],
-            ),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(image: AssetImage("assets/images/back2.png")),
+        ),
+        child: Center(
+          child: Column(
+            children: [
+              Padding(padding: EdgeInsets.only(top: 50)),
+              Image.asset("assets/images/iCodeGuyHead.png"),
+              Padding(padding: EdgeInsets.only(top: 30)),
+              GradientText("Player Name", 20.0),
+              Padding(padding: EdgeInsets.only(top: 30)),
+              InputField(onSubmitted: _createUser)
+            ],
           ),
         ),
       ),
@@ -61,50 +58,51 @@ class _StartPageState extends State<StartPage> {
 
   void _createUser(String userName) {
     setState(() {
-      userName;
+      newUser.userName = userName;
     });
   }
 }
 
 class StartButton extends StatelessWidget {
-  final User newUser;
-  const StartButton(this.newUser, {super.key});
+  const StartButton(User newUser, {super.key});
 
   @override
   Widget build(BuildContext context) {
     if (newUser.userName == "Guest") {
       return Container();
-    }
-
-    return Container(
-      width: 310,
-      height: 60,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.center,
-          end: Alignment.centerRight,
-          colors: [Color(0xFFE86B02), Color(0xFFFA9541)],
+    } else {
+      return Container(
+        width: 310,
+        height: 60,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.center,
+            end: Alignment.centerRight,
+            colors: [Color(0xFFE86B02), Color(0xFFFA9541)],
+          ),
+          borderRadius: BorderRadius.circular(25),
         ),
-        borderRadius: BorderRadius.circular(25),
-      ),
-      child: ElevatedButton(
-        onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => TaskPage(newUser)));
-        },
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25),
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => TaskPage(newUser)));
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25),
+            ),
+          ),
+          child: Text(
+            "START",
+            style: TextStyle(
+                fontFamily: "Nunito",
+                fontSize: 24,
+                fontWeight: FontWeight.w700),
           ),
         ),
-        child: Text(
-          "START",
-          style: TextStyle(
-              fontFamily: "Nunito", fontSize: 24, fontWeight: FontWeight.w700),
-        ),
-      ),
-    );
+      );
+    }
   }
 }
