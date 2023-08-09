@@ -1,11 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:wordfind_app/models/task_model.dart';
 
 import 'models/user_model.dart';
 
-class TaskPage extends StatelessWidget {
+
+
+class TaskPage extends StatefulWidget {
   final User user;
   const TaskPage(this.user, {super.key});
 
+  @override
+  State<TaskPage> createState() => _TaskPageState();
+}
+
+class _TaskPageState extends State<TaskPage> {
+  late List<TaskModel> listQuestions;
+  late User user;
+  @override
+  void initState() {
+    listQuestions= questions;
+    user = widget.user;
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +35,7 @@ class TaskPage extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         title: Text(
-          user.userName,
+          widget.user.userName,
           style: TextStyle(fontSize: 24, color: Color(0xFFE86B02)),
         ),
       ),

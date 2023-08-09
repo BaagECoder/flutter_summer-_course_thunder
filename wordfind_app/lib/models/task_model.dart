@@ -36,10 +36,17 @@ class TaskModel {
       isFull = true;
     }
 
-
     return answeredString == answer;
   }
-  clone(){
-    return TaskModel(question: question, answer: answer, pathImage: pathImage, isFull: isFull, isDone: isDone, arrayButtons: arrayButtons, puzzles: puzzles);
+
+  TaskModel clone() {
+    return TaskModel(
+        question: question,
+        answer: answer,
+        pathImage: pathImage,
+        isFull: isFull,
+        isDone: isDone,
+        arrayButtons: arrayButtons,
+        puzzles: puzzles);
   }
 }
