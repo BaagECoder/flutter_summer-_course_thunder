@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:wordfind_app/data/questions.dart';
 import 'package:wordfind_app/models/task_model.dart';
-
 import 'models/user_model.dart';
 
 
@@ -9,16 +9,21 @@ class TaskPage extends StatefulWidget {
   final User user;
   const TaskPage(this.user, {super.key});
 
+
   @override
   State<TaskPage> createState() => _TaskPageState();
 }
 
 class _TaskPageState extends State<TaskPage> {
-  late List<TaskModel> listQuestions;
+  late List<TaskModel>listQuiestion;
   late User user;
+
   @override
+
   void initState() {
-    listQuestions= questions;
+    listQuestions= quiestion;
+
+
     user = widget.user;
     super.initState();
   }
@@ -41,10 +46,18 @@ class _TaskPageState extends State<TaskPage> {
       ),
       body: SafeArea(
         child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+              "assets/images/back2.png",
+              ),
+            ),
+          ),
+
           child: Column(
             children: [
               Expanded(
-                child: Container(
+                  child: Container(
                   width: double.maxFinite,
                   padding: EdgeInsets.only(bottom: 10),
                   color: Colors.white,
