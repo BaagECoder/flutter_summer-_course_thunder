@@ -12,10 +12,7 @@ class TaskModel {
       {required this.question,
       required this.answer,
       required this.pathImage,
-      required this.isFull,
-      required this.isDone,
-      required this.arrayButtons,
-      required this.puzzles});
+      this.arrayButtons = const []});
 
   void setWordFindChar(List<CharModel> puzzles) {
     this.puzzles = puzzles;
@@ -41,12 +38,10 @@ class TaskModel {
 
   TaskModel clone() {
     return TaskModel(
-        question: question,
-        answer: answer,
-        pathImage: pathImage,
-        isFull: isFull,
-        isDone: isDone,
-        arrayButtons: arrayButtons,
-        puzzles: puzzles);
+      question: question,
+      answer: answer,
+      pathImage: pathImage,
+      arrayButtons: arrayButtons,
+    );
   }
 }

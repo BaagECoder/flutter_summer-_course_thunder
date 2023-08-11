@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wordfind_app/task_page.dart';
-import 'package:wordfind_app/start_page.dart';
 import 'welcome_page.dart';
-import 'start_page.dart';
 
 void main() {
   runApp(const MyApp());
