@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:icodegram_app/pages/login_page.dart';
 
 
 void main (){
@@ -12,12 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Word Find Game',
+      title: 'Icodegram',
       theme: ThemeData(
-        fontFamily: "Ribeye",
+        fontFamily: "Lobster",
       ),
       debugShowCheckedModeBanner: false,
-      home: MaterialApp(),
+      home: LoginPage(),
     );
   }
 }
