@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "653749198354",
+    "project_id": "lesson-19-baagii",
+    "storage_bucket": "lesson-19-baagii.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653749198354:android:e2d0838121d513faeb42cb",
+        "android_client_info": {
+          "package_name": "com.example.lesson_19_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653749198354-um2frvp7lkclr7caa76qaoajp38dsodd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDPd9Omu9oBpUPEzG6fFkTDRdbQ1ie9oI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "653749198354-um2frvp7lkclr7caa76qaoajp38dsodd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
