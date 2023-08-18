@@ -10,7 +10,8 @@ class AppLogo extends StatelessWidget {
         "iCodegram",
         style: TextStyle(
           color: Color(0xFFFFFFFFF),
-          fontSize: 35.5333366394043,
+          fontFamily: "lobster",
+          fontSize: 39.5333366394043,
           fontWeight: FontWeight.w400,
         ),
       ),
