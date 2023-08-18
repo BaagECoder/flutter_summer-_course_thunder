@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:icodegram_app/components/input.dart';
 import 'package:icodegram_app/components/logo.dart';
-
+import '../resources/auth_method.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
