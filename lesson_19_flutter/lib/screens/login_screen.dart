@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lesson_19_flutter/components/text_field_input.dart';
+import 'package:lesson_19_flutter/screens/home_screen.dart';
+
+import '../resources/auth_method.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -12,7 +15,40 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
+  bool _isLoading = false;
 
+  Future<void> loginUser() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    String result = await AuthMethods().loginUser(
+      email: _emailController.text,
+      password:  _passwordController.text ,
+
+    );
+
+    setState(() {
+      _isLoading = false;
+    });
+
+    if (result == 'success') {
+      print("Logged in");
+      setState(() {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => HomeScreen(),
+          ),
+        );
+      });
+
+    }
+
+    else  {
+      print('Not logged in');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +64,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 flex: 2,
                 child: Container(),
               ),
-              Text("iCodeGram"),
+              Text("iCodeGram", style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.w500,
+              )),
               SizedBox(
                 height: 64,
               ),
@@ -43,8 +82,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   hintText: "Enter your password",
                   isPassword: true,
                   textEditingController: _passwordController),
+              SizedBox(
+                height: 24,
+              ),
               InkWell(
-                onTap:loginUser,
+                onTap: loginUser,
                 child: Container(
                   width: double.infinity,
                   alignment: Alignment.center,
@@ -54,20 +96,17 @@ class _LoginScreenState extends State<LoginScreen> {
                         borderRadius: BorderRadius.all(Radius.circular(4))),
                     color: Colors.blue,
                   ),
-                  child: Center(
-                    child: Text(
-                      "Нэвтрэх",
-                    ),
-                  ),
+                  child: _isLoading
+                      ? Center(
+                          child: CircularProgressIndicator(color: Colors.white))
+                      : Text("Нэвтрэх"),
                 ),
               ),
-              SizedBox(
-                height: 12,
-                child: Flexible(
-                  flex: 2,
-                  child: Container(),
-                ),
-              )
+
+              Flexible(
+                flex: 2,
+                child: Container(),
+              ),
             ],
           ),
         ),

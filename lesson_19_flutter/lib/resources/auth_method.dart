@@ -10,7 +10,7 @@ class AuthMethods {
     required String email,
     required String password,
     required String username,
-  }) async  {
+  }) async {
     String result = 'Some error occured';
     try {
       if (email.isNotEmpty || password.isNotEmpty || username.isNotEmpty) {
@@ -21,6 +21,7 @@ class AuthMethods {
           'username': username,
           'uid': credential.user!.uid,
           'email': email,
+          'password': password,
           'following': [],
           'followers': []
         });
@@ -33,13 +34,32 @@ class AuthMethods {
     return result;
   }
 
-
   Future<String> loginUser({
     required String email,
     required String password,
-    required String username,
-  })async {
 
-    return '';
+  }) async {
+    String result = "Some error occurred";
+    try {
+    if  (email.isNotEmpty || password.isNotEmpty ) {
+      UserCredential credential = await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
+      _fireStore.collection('users').doc(credential.user!.uid).set({
+        'password': password,
+        'uid': credential.user!.uid,
+        'email': email,
+        'following': [],
+        'followers': []
+      });
+
+      result = 'success';
+    }
+    else  {
+      result = "Please enter all the fields";
+    }
+    } catch (err) {
+      result = err.toString();
+    }
+    return result;
   }
 }
