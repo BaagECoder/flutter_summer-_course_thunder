@@ -25,15 +25,18 @@ class _SignUpPageState extends State<SignUpPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Flexible(child: Container(
+              ), flex: 2,),
               AppLogo(),
               SizedBox(
-                height: 30,
+                height: 18,
               ),
               SignUpInput(),
-              SizedBox(
-                height: 28,
-              ),
+              Flexible(child: Container(), flex: 1,),
+
               SignUpRegister(),
+              Flexible(child: Container(), flex: 2,),
+
             ],
           ),
         ),

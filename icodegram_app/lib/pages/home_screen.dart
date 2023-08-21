@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:icodegram_app/components/bottombar_widget.dart';
+import 'package:icodegram_app/components/layout_page.dart';
 import 'package:icodegram_app/components/logo_widget.dart';
+import 'package:icodegram_app/components/story_container.dart';
 import 'package:icodegram_app/resources/story_modul.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
-
-
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -35,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Center(
         child: Column(
-
+          children: [],
         ),
       ),
     );

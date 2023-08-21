@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:icodegram_app/pages/home_screen.dart';
 
-class BottomNav extends StatefulWidget {
+class LayoutPage extends StatefulWidget {
   @override
-  _BottomNavState createState() => _BottomNavState();
+  _LayoutPageState createState() => _LayoutPageState();
 }
 
-class _BottomNavState extends State<BottomNav> {
+class _LayoutPageState extends State<LayoutPage> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
@@ -26,23 +26,29 @@ class _BottomNavState extends State<BottomNav> {
     return Scaffold(
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.orangeAccent,
+        showSelectedLabels: true,
+        showUnselectedLabels: false,
+
         backgroundColor: Color.fromRGBO(0, 0, 0, 1),
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
         onTap: _onTabTapped,
-        items: [
+
+        items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined, size: 34), label: ""),
+              icon: Icon(Icons.home_outlined, size: 34,), label: '●',),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add_box_outlined, size: 34),
-            label: '',
+            icon: Icon(Icons.add_box_outlined, size: 34,),
+            label: '●',
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.person_outline,
               size: 34,
             ),
-            label: '',
+            label: '●',
+
           ),
         ],
       ),

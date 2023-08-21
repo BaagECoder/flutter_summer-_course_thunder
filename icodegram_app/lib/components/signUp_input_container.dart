@@ -29,7 +29,7 @@ class _SignUpInputState extends State<SignUpInput> {
               textEditingController: _emailController,
               textInputType: TextInputType.emailAddress),
           SizedBox(
-            height: 25,
+            height: 22,
           ),
           TextFieldInput(
               hintText: "Хэрэглэгчийн нэр",
@@ -37,7 +37,7 @@ class _SignUpInputState extends State<SignUpInput> {
               textEditingController: _userNameController,
               textInputType: TextInputType.text),
           SizedBox(
-            height: 25,
+            height: 22,
           ),
           TextFieldInput(
               hintText: "Нууц үг",
@@ -45,7 +45,7 @@ class _SignUpInputState extends State<SignUpInput> {
               textEditingController: _passwordController,
               textInputType: TextInputType.text),
           SizedBox(
-            height: 25,
+            height: 22,
           ),
           TextFieldInput(
               hintText: "Нууц үг давтах",
@@ -53,7 +53,7 @@ class _SignUpInputState extends State<SignUpInput> {
               textEditingController: _passwordController,
               textInputType: TextInputType.text),
           SizedBox(
-            height: 45,
+            height: 30,
           ),
          InkWell(
             onTap: (){

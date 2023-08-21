@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:icodegram_app/components/button_widget.dart';
+import 'package:icodegram_app/components/layout_page.dart';
 import 'package:icodegram_app/components/text_field_input_widget.dart';
+import 'package:icodegram_app/pages/home_screen.dart';
 import 'package:icodegram_app/pages/login_screen.dart';
 import 'package:icodegram_app/pages/signUp_screen.dart';
 
@@ -39,7 +41,7 @@ class _LoginInputState extends State<LoginInput> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => SignUpPage(),
+            builder: (context) => LayoutPage(),
           ),
         );
       });
@@ -56,7 +58,7 @@ class _LoginInputState extends State<LoginInput> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           TextFieldInput(
-            hintText: "Нэвтрэх нэр",
+            hintText: "Имэйл хаяг",
             isPassword: false,
             textEditingController: _emailController,
             textInputType: TextInputType.emailAddress,
