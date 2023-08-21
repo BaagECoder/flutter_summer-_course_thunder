@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:icodegram_app/pages/login_screen.dart';
 
-class Register extends StatelessWidget {
-  const Register({super.key});
+class SignUpRegister extends StatelessWidget {
+  const SignUpRegister({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +23,16 @@ class Register extends StatelessWidget {
                 width: 12,
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginPage(),
+                    ),
+                  );
+                },
                 child: Text(
-                  'Бүртгүүлэх',
+                  'Нэвтрэх',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,

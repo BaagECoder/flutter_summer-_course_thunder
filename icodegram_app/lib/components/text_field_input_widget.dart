@@ -16,11 +16,15 @@ class TextFieldInput extends StatelessWidget {
       controller: textEditingController,
       decoration: InputDecoration(
           hintText: this.hintText,
+          hintStyle: TextStyle(
+            color: Colors.white30,
+            fontSize: 14
+          ),
           suffixIcon: IconButton(
             onPressed: () {},
             icon: Icon(
               Icons.clear,
-              color: Color(0xFFA0A0A0),
+              color: Colors.white30,
               size: 16,
             ),
           ),

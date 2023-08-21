@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:icodegram_app/components/button.dart';
-import 'package:icodegram_app/components/text_field_input.dart';
-import 'package:icodegram_app/pages/login_page.dart';
+import 'package:icodegram_app/components/button_widget.dart';
+import 'package:icodegram_app/components/text_field_input_widget.dart';
+import 'package:icodegram_app/pages/login_screen.dart';
+import 'package:icodegram_app/pages/signUp_screen.dart';
 
 import '../resources/auth_method.dart';
 
-class AppInput extends StatefulWidget {
-  const AppInput({super.key});
+class LoginInput extends StatefulWidget {
+  const LoginInput({super.key});
 
   @override
-  State<AppInput> createState() => _AppInputState();
+  State<LoginInput> createState() => _LoginInputState();
 }
 
-class _AppInputState extends State<AppInput> {
+class _LoginInputState extends State<LoginInput> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
@@ -38,7 +39,7 @@ class _AppInputState extends State<AppInput> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => LoginPage(),
+            builder: (context) => SignUpPage(),
           ),
         );
       });

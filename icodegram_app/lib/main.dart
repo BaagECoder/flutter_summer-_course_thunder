@@ -1,6 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:icodegram_app/pages/login_page.dart';
+import 'package:icodegram_app/components/bottombar_widget.dart';
+import 'package:icodegram_app/pages/home_screen.dart';
+import 'package:icodegram_app/pages/login_screen.dart';
+import 'package:icodegram_app/components/signUp_input_container.dart';
+import 'package:icodegram_app/pages/signUp_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +28,7 @@ class MyApp extends StatelessWidget {
 
       ),
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: BottomNav(),
     );
   }
 }

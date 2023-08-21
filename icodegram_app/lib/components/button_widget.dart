@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
 
-class AvailableButton extends StatelessWidget {
+class AvailableButton extends StatefulWidget {
   final void Function() onTap;
 
   const AvailableButton({super.key, required this.onTap});
 
+  @override
+  State<AvailableButton> createState() => _AvailableButtonState();
+}
+
+class _AvailableButtonState extends State<AvailableButton> {
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Container(
 
         child: InkWell(
-          onTap: onTap,
+          onTap: widget.onTap,
           child: Container(
             width: double.infinity,
             alignment: Alignment.center,

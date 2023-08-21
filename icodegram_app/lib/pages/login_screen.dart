@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:icodegram_app/components/button.dart';
-import 'package:icodegram_app/components/input.dart';
-import 'package:icodegram_app/components/logo.dart';
-import 'package:icodegram_app/components/register_container.dart';
+import 'package:icodegram_app/components/button_widget.dart';
+import 'package:icodegram_app/components/login_input_container.dart';
+import 'package:icodegram_app/components/logo_widget.dart';
+import 'package:icodegram_app/components/login_register_widget.dart';
 import '../resources/auth_method.dart';
 
 class LoginPage extends StatefulWidget {
@@ -24,14 +24,14 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(
               height: 60,
             ),
-            AppInput(),
+            LoginInput(),
             SizedBox(
               height: 28,
             ),
             SizedBox(
               height: 28,
             ),
-            Register(),
+            LoginRegister(),
           ],
         ),
       ),
