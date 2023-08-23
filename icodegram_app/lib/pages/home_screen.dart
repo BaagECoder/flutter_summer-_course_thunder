@@ -93,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Icon(
                       Icons.more_vert,
                       color: Colors.white30,
-                    )
+                    ),
                   ],
                 ),
                 SizedBox(
@@ -107,6 +107,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(
                   height: 10,
                 ),
+                Icon(
+                  Icons.favorite,
+                  color: Colors.white30,
+                )
+
               ],
             ),
           ),
@@ -119,63 +124,5 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  // Widget getBody() {
-  //   var stories;
-  //   return ListView(
-  //     children: [
-  //       Row(
-  //         children: [
-  //           SingleChildScrollView(
-  //             scrollDirection: Axis.horizontal,
-  //             padding: EdgeInsets.only(top: 5, left: 5, right: 5),
-  //             child: Row(
-  //                 children: List.generate(stories.length, (index) {
-  //               return Padding(
-  //                 padding: const EdgeInsets.all(3.0),
-  //                 child: Container(
-  //                   width: 80,
-  //                   child: Column(
-  //                     children: [
-  //                       Stack(
-  //                         children: [
-  //                           Container(
-  //                             decoration: BoxDecoration(
-  //                               shape: BoxShape.circle,
-  //                               gradient: LinearGradient(
-  //                                 colors: [
-  //                                   Color.fromARGB(250, 149, 2, 1),
-  //                                   Color.fromARGB(250, 149, 65, 1)
-  //                                 ],
-  //                               ),
-  //                             ),
-  //                             child: Padding(
-  //                               padding: EdgeInsets.all(2.0),
-  //                               child: Container(
-  //                                 height: 70,
-  //                                 width: 70,
-  //                                 decoration: BoxDecoration(
-  //                                   shape: BoxShape.circle,
-  //                                   border: Border.all(
-  //                                       width: 2, color: Colors.white30),
-  //                                   image: DecorationImage(
-  //                                     image:
-  //                                         NetworkImage(stories[0]['imageUrl']),
-  //                                   ),
-  //                                 ),
-  //                               ),
-  //                             ),
-  //                           ),
-  //                         ],
-  //                       ),
-  //                     ],
-  //                   ),
-  //                 ),
-  //               );
-  //             })),
-  //           ),
-  //         ],
-  //       ),
-  //     ],
-  //   );
-  // }
+
 }

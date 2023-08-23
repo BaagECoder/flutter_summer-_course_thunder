@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:icodegram_app/pages/home_screen.dart';
+import 'package:icodegram_app/pages/postAdd_Screen.dart';
 
 class LayoutPage extends StatefulWidget {
   @override
@@ -11,7 +12,7 @@ class _LayoutPageState extends State<LayoutPage> {
 
   final List<Widget> _pages = [
     HomeScreen(),
-    PlaceholderWidget(color: Colors.green),
+    PostAdd(),
     PlaceholderWidget(color: Colors.purple),
   ];
 

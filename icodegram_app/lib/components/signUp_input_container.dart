@@ -55,6 +55,7 @@ class _SignUpInputState extends State<SignUpInput> {
           SizedBox(
             height: 30,
           ),
+
          InkWell(
             onTap: (){
               AuthMethods().signUpUser(

@@ -42,6 +42,7 @@ dependencies:
   flutter_svg: ^2.0.6
   image_picker: ^1.0.1
   video_player: ^2.7.0
+  dotted_border: ^2.0.0+3
   cached_network_image:
               git:
                           url: https://github.com/XuannThucc/flutter_cached_network_image.git

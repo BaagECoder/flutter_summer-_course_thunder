@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:icodegram_app/models/story_model.dart';
 import 'package:icodegram_app/models/user_model.dart';
 
 class StoryData{
