@@ -37,7 +37,7 @@ class _LayoutPageState extends State<LayoutPage> {
 
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined, size: 34,), label: '●',),
+              icon: Icon(Icons.home_outlined, size: 34), label: '●',),
           BottomNavigationBarItem(
             icon: Icon(Icons.add_box_outlined, size: 34,),
             label: '●',

@@ -41,6 +41,12 @@ dependencies:
   firebase_auth: ^4.6.2
   flutter_svg: ^2.0.6
   image_picker: ^1.0.1
+  video_player: ^2.7.0
+  cached_network_image:
+              git:
+                          url: https://github.com/XuannThucc/flutter_cached_network_image.git
+                          path: cached_network_image
+                          ref: ff72f00f142f13d889d7549e013af91cb0b523ab
 
 dev_dependencies:
   flutter_test:

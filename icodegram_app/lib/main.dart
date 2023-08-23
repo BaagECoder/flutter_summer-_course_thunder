@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:icodegram_app/components/layout_page.dart';
+import 'package:icodegram_app/pages/layout_main_screen.dart';
 import 'package:icodegram_app/pages/home_screen.dart';
 import 'package:icodegram_app/pages/login_screen.dart';
 import 'package:icodegram_app/components/signUp_input_container.dart';
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
 
       ),
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: LayoutPage(),
     );
   }
 }
