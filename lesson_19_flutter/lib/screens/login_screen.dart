@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lesson_19_flutter/components/text_field_input.dart';
 import 'package:lesson_19_flutter/screens/home_screen.dart';
+import 'package:lesson_19_flutter/screens/signup_screen.dart';
 
 import '../resources/auth_method.dart';
 
@@ -24,8 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     String result = await AuthMethods().loginUser(
       email: _emailController.text,
-      password:  _passwordController.text ,
-
+      password: _passwordController.text,
     );
 
     setState(() {
@@ -42,10 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         );
       });
-
-    }
-
-    else  {
+    } else {
       print('Not logged in');
     }
   }
@@ -64,10 +61,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 flex: 2,
                 child: Container(),
               ),
-              Text("iCodeGram", style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.w500,
-              )),
+              Text("iCodeGram",
+                  style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.w500,
+                  )),
               SizedBox(
                 height: 64,
               ),
@@ -102,11 +100,20 @@ class _LoginScreenState extends State<LoginScreen> {
                       : Text("Нэвтрэх"),
                 ),
               ),
-
               Flexible(
                 flex: 2,
                 child: Container(),
               ),
+              GestureDetector(
+                onTap: loginUser,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: const Text(
+                    "Sign Up",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+              )
             ],
           ),
         ),
