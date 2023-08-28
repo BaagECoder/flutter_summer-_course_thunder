@@ -61,13 +61,7 @@ Future<model.User> getUserDetails() async {
       if (email.isNotEmpty || password.isNotEmpty) {
         UserCredential credential = await _auth.signInWithEmailAndPassword(
             email: email, password: password);
-        _fireStore.collection('users').doc(credential.user!.uid).set({
-          'password': password,
-          'uid': credential.user!.uid,
-          'email': email,
-          'following': [],
-          'followers': []
-        });
+
 
         result = 'success';
       } else {

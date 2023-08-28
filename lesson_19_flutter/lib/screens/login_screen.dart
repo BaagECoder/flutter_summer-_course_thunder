@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lesson_19_flutter/components/text_field_input.dart';
 import 'package:lesson_19_flutter/screens/home_screen.dart';
+import 'package:lesson_19_flutter/screens/profile_screen.dart';
 import 'package:lesson_19_flutter/screens/signup_screen.dart';
 
 import '../resources/auth_method.dart';
@@ -38,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => HomeScreen(),
+            builder: (context) => ProfileScreen(),
           ),
         );
       });

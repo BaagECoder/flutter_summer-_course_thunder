@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:lesson_19_flutter/components/text_field_input.dart';
 import 'package:lesson_19_flutter/resources/auth_method.dart';
+import 'package:lesson_19_flutter/screens/login_screen.dart';
 import 'package:lesson_19_flutter/utils/utils.dart';
 
 class SignUpScreen extends StatefulWidget {
