@@ -1,4 +1,3 @@
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +5,7 @@ import 'package:lesson_19_flutter/provider/user_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:lesson_19_flutter/models/user.dart' as model;
 import 'package:lesson_19_flutter/provider/user_provider.dart';
+
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
@@ -14,7 +14,7 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  String userName= "";
+  String userName = "";
 
   @override
   void initState() {
@@ -24,22 +24,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
     addData();
   }
 
-  void getUserName()async {
-DocumentSnapshot snapshot = await FirebaseFirestore.instance.collection("user").doc(FirebaseAuth.instance.currentUser!.uid).get();
-print(snapshot.data());
+  void getUserName() async {
+    DocumentSnapshot snapshot = await FirebaseFirestore.instance
+        .collection("user")
+        .doc(FirebaseAuth.instance.currentUser!.uid)
+        .get();
+    print(snapshot.data());
   }
 
   void addData() async {
-    UserProvider _userProvider = Provider.of(context, listen:false);
+    UserProvider userProvider = Provider.of(context, listen: false);
 
-    return _userProvider.refreshUser();
-
+    await userProvider.refreshUser();
   }
 
   @override
   Widget build(BuildContext context) {
-   model.User user = Provider.of<UserProvider>(context).getUser;
-   // print(user.userName);
+    model.User user = Provider.of<UserProvider>(context).getUser;
+
 
     return Scaffold(
       body: Center(
